@@ -1,0 +1,206 @@
+openapi: 3.0.0
+info:
+  title: Chatbot API
+  description: Optional multiline or single-line description in [CommonMark](http://commonmark.org/help/) or HTML.
+  version: 1.1.2 
+  
+
+servers:
+  - url: http://localhost:8080/
+    description:  Local server 
+  - url: http://16.16.140.18:8080/
+    description:  Pre Production server
+  - url: https://test.com/
+    description:  Production server
+  
+
+
+
+paths:
+  /user/signup:
+    post:
+      summary: User Sign up. 
+      description: <b> Request :- </b> <br /> <br />
+              <b> email* </b>  is required <br /> 
+              <b> password* </b>  is required <br /> 
+              
+
+      # parameters:
+      #   - in: query
+      #     name: month_year
+      #     schema:
+      #       #type: integer
+      #       example: 2022-10        
+      post:
+      requestBody:
+        required: false
+        content:
+          # multipart/form-data:
+           application/json:
+            schema:
+              type: object
+              properties: 
+                first_name:         
+                  type: string 
+                last_name:         
+                  type: string 
+                email:         
+                  type: string 
+                type:         
+                  type: string 
+                phone_number:         
+                  type: string 
+                password:         
+                  type: string 
+                         
+      responses:
+        '201':
+          description: ok. 
+
+# //login---------------------------
+      paths:
+  /user/login:
+    post:
+      summary: User Login. 
+      description: <b> Request :- </b> <br /> <br />
+              <b> email* </b>  is required <br /> 
+              
+
+      # parameters:
+      #   - in: query
+      #     name: month_year
+      #     schema:
+      #       #type: integer
+      #       example: 2022-10        
+      post:
+      requestBody:
+        required: false
+        content:
+          # multipart/form-data:
+           application/json:
+            schema:
+              type: object
+              properties: 
+                email:         
+                  type: string 
+                password:       
+                  type: string
+               
+      responses:
+        '201':
+          description: ok.          
+
+# //Chat and response api---------------------------
+      paths:
+  /chat/create:
+    post:
+      summary: chat and chatbox create. 
+      description: <b> Request :- </b> <br /> <br />
+              <b> user_id* </b>  is required <br /> 
+              
+              <b> Notes :- </b>  there are Two Table one is Chat* and another is ChatBox <br />
+              <p> const { questions, type, user_id, chatbox_id } = req.body;<br /> if(type=='New'){<br />const chatbox = new chatBoxModel({ questions, type, user_id }) <br />const lorem = faker.lorem;<br /> const chat = new chatModel({ questions,type, response:lorem.paragraph(), user_id, chatbox_id:chatbox._id })<br />await chat.save()<br />}   
+              <p> if (type === 'Old') { <br />const lorem = faker.lorem;<br /> const chat = new chatModel({ questions,type, response:lorem.paragraph(), user_id, chatbox_id })<br /> await chat.save()<br />}
+
+      # parameters:
+      #   - in: query
+      #     name: month_year
+      #     schema:
+      #       #type: integer
+      #       example: 2022-10        
+      post:
+      requestBody:
+        required: false
+        content:
+          # multipart/form-data:
+           application/json:
+            schema:
+              type: object
+              properties: 
+                questions:         
+                  type: string 
+                type:       
+                  type: string
+                user_id:       
+                  type: string  
+                chatbox_id:       
+                  type: string  
+               
+      responses:
+        '201':
+          description: ok.                    
+
+  paths:
+  /chatbox/get_catbox/{userId}:
+    get:
+      summary: get all chatbox according to User.
+      parameters:
+        - name: userId
+          in: path
+          required: true
+      responses: 
+        '201':
+          description: OK         
+
+  paths:
+  /chatbox/get_single_chatbox/{id}:
+    get:
+      summary: get single chatbox according to Chatbox Id.
+      parameters:
+        - name: id
+          in: path
+          required: true
+      responses: 
+        '201':
+          description: OK       
+
+# //Chatbox Update--------------------
+  paths:
+  /chatbox/update:
+    post:
+      summary: ChatBox update according to chatbox id . 
+      description: <b> Request :- </b> <br /> <br />
+              <b> chotBox_id* </b>  is required <br /> 
+              
+
+      # parameters:
+      #   - in: query
+      #     name: month_year
+      #     schema:
+      #       #type: integer
+      #       example: 2022-10        
+      post:
+      requestBody:
+        required: false
+        content:
+          # multipart/form-data:
+           application/json:
+            schema:
+              type: object
+              properties: 
+                chotBox_id:         
+                  type: string 
+                questions:       
+                  type: string
+                user_id:       
+                  type: string  
+                
+               
+               
+      responses:
+        '201':
+          description: ok.      
+
+# //delete job category----------                      
+
+  paths:
+  /chatbox/delete/{id}:
+    delete:
+      summary: delete chatbox according to chatbox id
+      parameters:
+        - name: id
+          in: path
+          required: true
+      responses: 
+        '200':
+          description: OK    

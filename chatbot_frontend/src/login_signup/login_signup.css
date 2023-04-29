@@ -1,0 +1,207 @@
+html,
+body,
+#root,
+.App,
+form,
+.form-group {
+    height: 100%;
+}
+
+body {
+    background: #f3f6fc;
+}
+
+.login-form {
+    padding: 30px 50px;
+    background: #fff;
+    border-radius: 20px;
+    max-width: 520px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.form-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.form-control {
+    margin-right: 0;
+    height: 50px;
+    padding: 0 22px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    font-family: 'Open Sans', sans-serif;
+    border-radius: 5px;
+    border: 1px solid #dfdede;
+    overflow: hidden;
+    font-weight: 400;
+}
+.form-control:focus {
+	border: 1px solid #8397FF;
+	outline: none;
+	box-shadow: none;
+}
+.login-page .form_list lable {
+    text-align: left;
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 5px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    color: rgb(26 26 26);
+}
+
+.form_list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    margin: 0 0 20px;
+}
+
+.link_here a {
+    color: #8397FF;
+    text-decoration: underline;
+    margin-left: 5px;
+}
+
+.form_list .btn {
+    background: #8397FF;
+    height: 50px;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+    color: #fff !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    border: none;
+}
+
+.signUp_button {
+    width: 100%;
+}
+
+#signInButton button {
+    width: 100%;
+    justify-content: center;
+    height: 50px;
+    border-radius: 5px !important;
+
+}
+
+#signInButton button span {
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+    font-size: 16px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400 !important;
+}
+
+.or_text {
+    text-align: center;
+    padding: 5px 0;
+    margin: 0;
+}
+
+.form_list.btn_list {
+    margin-bottom: 0;
+}
+
+.link_here {
+    text-align: center;
+    margin: 20px 0 0;
+}
+
+.left_side {
+    width: 50%;
+    padding-right: 7px;
+}
+
+.right_side {
+    width: 50%;
+    padding-left: 7px;
+}
+
+.login-form.signupform {
+    max-width: 620px;
+}
+
+.form_list.btn_list {
+    margin-top: 25px;
+}
+
+.login-form h2 {
+    margin: 0 0 30px;
+    font-size: 30px;
+    color: rgb(26 26 26);
+}
+p#error_message {
+    color: rgb(155, 3, 3);
+    margin-top: 2px;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+@media only screen and (max-width: 767px) {
+    .form-control {
+        height: 48px;
+        padding: 0 15px;
+
+    }
+
+    body,
+    .login-form {
+        background: #f3f6fc;
+    }
+
+    .form-group {
+        align-items: inherit;
+    }
+
+    .login-form {
+        padding: 40px 20px;
+    }
+
+    .login-form {
+        border-radius: 0;
+    }
+
+    .left_side {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+
+    .right_side {
+        width: 100%;
+        padding: 0;
+    }
+
+    html,
+    body,
+    #root,
+    .App,
+    form,
+    .form-group {
+        height: auto;
+    }
+}
